@@ -1,7 +1,5 @@
 class Player:
-    def __init__(self, name):
+    def __init__(self, name, first):
         self.name = name
-        self.points = 0
-
-    def addpoints(self, n):
-        self.points += n
+        self.starter = first
+        self.now = True if self.starter else False
