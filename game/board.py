@@ -5,6 +5,8 @@ from scoreboard import Scoreboard
 from turn import Turn
 from turn import AITurn
 from kivy.uix.button import Button
+from kivy.uix.popup import Popup
+from kivy.uix.label import Label
 
 NONE = 0
 S = 1
@@ -67,6 +69,19 @@ class SOSBoard(GridLayout):
         self.currentturn = Turn(currentnum+1)
         App.get_running_app().game.s_btn.background_color = (1, 1, 1, 1)
         App.get_running_app().game.o_btn.background_color = (1, 1, 1, 1)
+        if self.currentturn.num == 82:
+            if self.scoreboard.player1points > self.scoreboard.player2points:
+                winnerstr = App.get_running_app().game.player1name.text + ' is the winner!!!'
+                popup = Popup(title='Game over',content=Label(text=winnerstr),size_hint=(None, None), size=(400, 400))
+                popup.open()
+            elif self.scoreboard.player1points < self.scoreboard.player2points:
+                winnerstr = App.get_running_app().game.player2name.text + ' is the winner!!!'
+                popup = Popup(title='Game over', content=Label(text=winnerstr), size_hint=(None, None), size=(400, 400))
+                popup.open()
+            else:
+                popup = Popup(title='Game over', content=Label(text='Draw'), size_hint=(None, None), size=(400, 400))
+                popup.open()
+            return
         if self.ai and self.currentturn.num%2 == 0:
             turn = AITurn(self.currentturn.num)
             turn.doPriorityMove()
