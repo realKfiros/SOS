@@ -62,6 +62,21 @@ class AITurn(Turn):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    self.defendo[(row, col)] = 1
+                            if grid[row][col + 1].text == '':
+                               if grid[row][col + 2].text == 'S':
+                                   if self.defendo.has_key((row, col)):
+                                       self.defendo[(row, col)] += 1
+                                   else:
+                                       self.defendo[(row, col)] = 1
+                            if grid[row + 1][col + 1].text == '':
+                               if grid[row + 2][col + 2].text == 'S':
+                                   if self.defendo.has_key((row, col)):
+                                       self.defendo[(row, col)] += 1
+                                   else:
+                                       self.defendo[(row, col)] = 1
                         else: pass
                     elif col == 1:
                         if grid[row][col].text == '':
@@ -108,6 +123,39 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            if grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col + 1].text == '':
+                                if grid[row + 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif 1 < col < 7:
                         if grid[row][col].text == '':
@@ -179,6 +227,61 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            if grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col - 1].text == '':
+                                if grid[row + 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col + 1].text == '':
+                                if grid[row + 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 7:
                         if grid[row][col].text == '':
@@ -230,6 +333,39 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            if grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col - 1].text == '':
+                                if grid[row + 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 8:
                         if grid[row][col].text == '':
@@ -245,6 +381,21 @@ class AITurn(Turn):
                                     self.attacks[(row, col)] += 1
                                 else:
                                     self.attacks[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    self.defendo[(row, col)] = 1
+                            if grid[row][col - 1].text == '':
+                               if grid[row][col - 2].text == 'S':
+                                   if self.defendo.has_key((row, col)):
+                                       self.defendo[(row, col)] += 1
+                                   else:
+                                       self.defendo[(row, col)] = 1
+                            if grid[row + 1][col - 1].text == '':
+                               if grid[row + 2][col - 2].text == 'S':
+                                   if self.defendo.has_key((row, col)):
+                                       self.defendo[(row, col)] += 1
+                                   else:
+                                       self.defendo[(row, col)] = 1
                         else: pass
                 elif row == 1:
                     if col == 0:
@@ -292,6 +443,21 @@ class AITurn(Turn):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    self.defendo[(row, col)] = 1
+                            if grid[row][col + 1].text == '':
+                               if grid[row][col + 2].text == 'S':
+                                   if self.defendo.has_key((row, col)):
+                                       self.defendo[(row, col)] += 1
+                                   else:
+                                       self.defendo[(row, col)] = 1
+                            if grid[row + 1][col + 1].text == '':
+                               if grid[row + 2][col + 2].text == 'S':
+                                   if self.defendo.has_key((row, col)):
+                                       self.defendo[(row, col)] += 1
+                                   else:
+                                       self.defendo[(row, col)] = 1
                         else: pass
                     if col == 1:
                         if grid[row][col].text == '':
@@ -373,6 +539,39 @@ class AITurn(Turn):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
+                            if grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col + 1].text == '':
+                                if grid[row + 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif 1 < col < 7:
                         if grid[row][col].text == '':
@@ -459,6 +658,61 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            if grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col - 1].text == '':
+                                if grid[row + 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col + 1].text == '':
+                                if grid[row + 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 7:
                         if grid[row][col].text == '':
@@ -540,6 +794,39 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            if grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col - 1].text == '':
+                                if grid[row + 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                elif grid[row + 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 8:
                         if grid[row][col].text == '':
@@ -581,6 +868,21 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    self.defendo[(row, col)] = 1
+                            if grid[row][col - 1].text == '':
+                               if grid[row][col - 2].text == 'S':
+                                   if self.defendo.has_key((row, col)):
+                                       self.defendo[(row, col)] += 1
+                                   else:
+                                       self.defendo[(row, col)] = 1
+                            if grid[row + 1][col - 1].text == '':
+                               if grid[row + 2][col - 2].text == 'S':
+                                   if self.defendo.has_key((row, col)):
+                                       self.defendo[(row, col)] += 1
+                                   else:
+                                       self.defendo[(row, col)] = 1
                         else: pass
                 elif 1 < row < 7:
                     if col == 0:
@@ -638,6 +940,61 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            if grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row - 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col + 1].text == '':
+                                if grid[row + 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row + 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 1:
                         if grid[row][col].text == '':
@@ -739,6 +1096,61 @@ class AITurn(Turn):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
+                            if grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row - 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                            if grid[row + 1][col + 1].text == '':
+                                if grid[row + 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
+                                if grid[row + 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif 1 < col < 7:
                         if grid[row][col].text == '':
@@ -800,6 +1212,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -810,6 +1233,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -820,6 +1254,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -830,6 +1275,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row + 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -840,6 +1296,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row + 1][col + 1].text == '':
+                                if grid[row + 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row + 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row + 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -850,6 +1317,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row + 1][col - 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -860,6 +1338,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row + 1][col - 1].text == '':
+                                if grid[row + 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row + 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row][col - 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -870,6 +1359,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                         else: pass
                     elif col == 7:
                         if grid[row][col].text == '':
@@ -916,6 +1416,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -926,6 +1437,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -966,6 +1488,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row + 1][col - 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -976,6 +1509,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row + 1][col - 1].text == '':
+                                if grid[row + 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row + 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row][col - 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -986,8 +1530,19 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                         else: pass
-                    elif col == 8:  # TODO fix
+                    elif col == 8:
                         if grid[row][col] == '':
                             if grid[row][col - 2].text == 'S' and grid[row][col - 1].text == 'O':
                                 self.attacks[(row, col)] = 1
@@ -1012,6 +1567,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1022,6 +1588,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row + 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1032,6 +1609,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row + 1][col].text == '':
+                                if grid[row + 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row + 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row + 1][col - 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1042,6 +1630,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row + 1][col - 1].text == '':
+                                if grid[row + 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row + 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                             if grid[row][col - 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1052,6 +1651,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defendo[(row, col)] = 1
                         else: pass
                 elif row == 7:
                     if col == 0:
@@ -1077,6 +1687,11 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    self.defendo[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    self.defends[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1087,12 +1702,18 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
-                            if grid[row][col + 1].text == 'O':
+                            elif grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                else:
+                                    self.defendo[(row, col)] = 1
+                            elif grid[row - 2][col + 2].text == 'O':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
-                            if grid[row][col - 1].text == 'S':
+                            if grid[row][col + 1].text == 'O':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
                                 else:
@@ -1138,6 +1759,17 @@ class AITurn(Turn):
                                     self.defends[(row, col)] = 1
                             elif grid[row - 1][col].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1148,6 +1780,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1158,6 +1801,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row + 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1214,6 +1868,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1224,6 +1889,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1234,6 +1910,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1244,6 +1931,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row + 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1269,6 +1967,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 7:
                         if grid[row][col].text == '':
@@ -1305,6 +2014,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1315,6 +2035,17 @@ class AITurn(Turn):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1350,6 +2081,17 @@ class AITurn(Turn):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
+                            elif grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 8:
                         if grid[row][col].text == '':
@@ -1371,6 +2113,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1381,6 +2134,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row + 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1401,6 +2165,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                 elif row == 8:
                     if col == 0:
@@ -1419,16 +2194,49 @@ class AITurn(Turn):
                                     self.attacks[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 self.defends[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
+                            elif grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
                                 else:
                                     self.defends[(row, col)] = 1
+                            elif grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 1:
                         if grid[row][col].text == '':
@@ -1448,6 +2256,17 @@ class AITurn(Turn):
                                     self.attacks[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 self.defends[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1458,6 +2277,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1468,6 +2298,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif 1 < col < 7:
                         if grid[row][col].text == '':
@@ -1499,6 +2340,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col -2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1509,6 +2361,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1519,6 +2382,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col + 1].text == '':
+                                if grid[row - 2][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1529,6 +2403,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col + 1].text == '':
+                                if grid[row][col + 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col + 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row][col - 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1539,6 +2424,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col - 1].text == '':
+                                if grid[row][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 7:
                         if grid[row][col].text == '':
@@ -1560,6 +2456,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1570,6 +2477,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col].text == '':
+                                if grid[row - 2][col].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col + 1].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1600,6 +2518,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
                     elif col == 8:
                         if grid[row][col].text == '':
@@ -1619,6 +2548,17 @@ class AITurn(Turn):
                                 self.defends[(row, col)] = 1
                             elif grid[row - 1][col - 1].text == 'O':
                                 self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                             if grid[row - 1][col].text == 'S':
                                 if self.defends.has_key((row, col)):
                                     self.defends[(row, col)] += 1
@@ -1629,6 +2569,17 @@ class AITurn(Turn):
                                     self.defendo[(row, col)] += 1
                                 else:
                                     self.defendo[(row, col)] = 1
+                            elif grid[row - 1][col - 1].text == '':
+                                if grid[row - 2][col - 2].text == 'S':
+                                    if self.defendo.has_key((row, col)):
+                                        self.defendo[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
+                                elif grid[row - 2][col - 2].text == 'O':
+                                    if self.defends.has_key((row, col)):
+                                        self.defends[(row, col)] += 1
+                                    else:
+                                        self.defends[(row, col)] = 1
                         else: pass
         maxatt = 0
         maxattlist = list()
