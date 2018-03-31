@@ -3,7 +3,7 @@ SOS is a really simple pencil and paper game.
 I searched a great game for a school project that you can't find online.
 I've got the idea of this game from a good friend.
 
-<b>Requirements</b>
+<b>Requirements</b>  
 To run this project you need:
 * Python 2.7
 * Kivy
