@@ -1,13 +1,13 @@
 # SOS
-SOS is a really simple pencil and paper game.
-I searched a great game for a school project that you can't find online.
-I've got the idea of this game from a good friend.
+SOS is a really simple pencil and paper game.  
+I searched a great game for a school project that you can't find online.  
+I've got the idea of this game from a good friend.  
 
 <b>Requirements:</b>  
 To run this project you need:
 * Python 2.7
 * Kivy
-Run with:
+Run with:  
 `$ python main.py`
 ## The rules of the game
 1. Number of players: 2
