@@ -1,14 +1,21 @@
 # SOS
-SOS is a really simple pencil and paper game.  
-I searched a great game for a school project that you can't find online.  
-I've got the idea of this game from a good friend.  
 
-<b>Requirements:</b>  
-To run this project you need:
-* Python 2.7
-* Kivy  
-Run with:  
-`$ python main.py`
+**SOS** is a simple yet strategic pencil-and-paper game implemented in Python using the Kivy framework.  
+This project was originally built in 2018 as a school assignment, inspired by a friend's idea to bring a lesser-known game to life.
+
+## Requirements
+
+To run this project, you need **Python 2.7**
+
+## Setup the environment
+1. Make sure you're using **Python 2.7**, I highly suggest using a [virtual environment](https://pypi.org/project/virtualenv/).
+2. Install the required libraries with ```pip install -r requirements.txt```
+
+## Run the game
+```bash
+python main.py
+```
+
 ## The rules of the game
 1. Number of players: 2
 2. Board size: 9x9
