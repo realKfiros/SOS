@@ -55,9 +55,6 @@ class AITurn(Turn):
         self.attacko = dict()
 
     def doPriorityMove(self):
-        """
-        :return: finds the preferred move, if there are some 'best' possible moves it chooses randomally
-        """
         grid = App.get_running_app().game.board.grid
         for r in range(9):
             for c in range(9):
