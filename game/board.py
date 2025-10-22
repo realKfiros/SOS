@@ -140,7 +140,7 @@ class SOSBoard(GridLayout):
     def addpoints(self, instance):
         """
         :param instace: for the on_release/on_press function
-        :return: the number of the points to be added after the last turn
+        :return: the number of the points to be added after the last turn (after checking all directions and painting the squares if they're part of an SOS pattern)
         """
         row, col = instance.r, instance.c
         points = 0
